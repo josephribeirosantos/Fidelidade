@@ -1,0 +1,16 @@
+1686064285598	geckodriver	INFO	Listening on 127.0.0.1:63423
+1686064286114	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/v5/0_548jf12wqdbszddpxj275w0000gn/T/rust_mozprofilePBSTrT"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1686064286383	Marionette	INFO	Marionette enabled
+1686064286520	Marionette	INFO	Listening on port 63431
+Read port: 63431
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:63424
+1686064286569	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+DevTools listening on ws://127.0.0.1:63424/devtools/browser/9e8a1242-eb47-4e48-9155-e95357665d0c
+JavaScript warning: https://www.fidelidade.pt/PT/particulares/Paginas/default.aspx, line 283: unreachable code after return statement
+JavaScript warning: https://grmtech.net/r/pt46922a0880a8f11f8f69cbb52b1396be.js, line 449: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://grmtech.net/r/pt46922a0880a8f11f8f69cbb52b1396be.js, line 449: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1686064289557	Marionette	INFO	Stopped listening on port 63431

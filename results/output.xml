@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on darwin)" generated="20230606 16:42:36.169" rpa="false" schemaversion="3">
+<suite id="s1" name="Fidelidade Testes" source="/Users/josephsantos/Desktop/projetos/fidelidade/fidelidade_testes.robot">
+<test id="s1-t1" name="Caso de Teste 01 - Acesso ao menu &quot;Particulares&quot;" line="9">
+<kw name="Abrir o navegador" library="fidelidade_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230606 16:42:36.230" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg timestamp="20230606 16:42:36.232" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230606 16:42:36.230" endtime="20230606 16:42:37.599"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230606 16:42:37.599" endtime="20230606 16:42:38.024"/>
+</kw>
+<status status="PASS" starttime="20230606 16:42:36.230" endtime="20230606 16:42:38.025"/>
+</kw>
+<kw name="Acessar a home page do site Fidelidade.com.br" library="fidelidade_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230606 16:42:38.025" level="INFO">Opening url 'https://www.fidelidade.pt/'</msg>
+<status status="PASS" starttime="20230606 16:42:38.025" endtime="20230606 16:43:20.558"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${COOKIES_PRIVACIDADE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230606 16:43:20.559" level="INFO">Clicking element '//button[contains(.,'Aceitar Todos')]'.</msg>
+<status status="PASS" starttime="20230606 16:43:20.558" endtime="20230606 16:43:20.590"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${MENU_PARTICULARES}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230606 16:43:20.590" endtime="20230606 16:43:20.602"/>
+</kw>
+<status status="PASS" starttime="20230606 16:42:38.025" endtime="20230606 16:43:20.602"/>
+</kw>
+<kw name="Verificar se o título da página fica &quot;Fidelidade | Nº 1 em Seguros Automóvel, Saúde, Casa e Viagem&quot;" library="fidelidade_resources" sourcename="Verificar se o título da página fica &quot;${TITULO}&quot;">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>title=${TITULO}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230606 16:43:20.604" level="INFO">Page title is 'Fidelidade | Nº 1 em Seguros Automóvel, Saúde, Casa e Viagem'.</msg>
+<status status="PASS" starttime="20230606 16:43:20.602" endtime="20230606 16:43:20.604"/>
+</kw>
+<status status="PASS" starttime="20230606 16:43:20.602" endtime="20230606 16:43:20.604"/>
+</kw>
+<kw name="Entrar no menu &quot;Particulares&quot;" library="fidelidade_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${MENU_PARTICULARES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230606 16:43:20.605" level="INFO">Clicking element '//*[@id="header"]/div[1]/div[2]/div/div[1]/nav/a[1]'.</msg>
+<status status="PASS" starttime="20230606 16:43:20.604" endtime="20230606 16:43:39.932"/>
+</kw>
+<status status="PASS" starttime="20230606 16:43:20.604" endtime="20230606 16:43:39.933"/>
+</kw>
+<kw name="Entrar no menu &quot;Auto&quot;" library="fidelidade_resources">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>css=a.header</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230606 16:43:39.933" level="INFO">Simulating Mouse Over on element 'css=a.header'.</msg>
+<status status="PASS" starttime="20230606 16:43:39.933" endtime="20230606 16:43:40.230"/>
+</kw>
+<status status="PASS" starttime="20230606 16:43:39.933" endtime="20230606 16:43:40.230"/>
+</kw>
+<kw name="Entrar no submenu &quot;Auto1|2|3|4&quot;" library="fidelidade_resources">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>link=Auto 1|2|3|4</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230606 16:43:40.231" level="INFO">Clicking link 'link=Auto 1|2|3|4'.</msg>
+<status status="PASS" starttime="20230606 16:43:40.231" endtime="20230606 16:44:05.495"/>
+</kw>
+<status status="PASS" starttime="20230606 16:43:40.230" endtime="20230606 16:44:05.495"/>
+</kw>
+<kw name="Clicar no botão &quot;Quero Simular&quot;" library="fidelidade_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=${BUTTON_QUERO_SIMULAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230606 16:44:05.496" level="INFO">Clicking element 'id=ctl00_PlaceHolderMain_EditModePanel2_ProductDescription_lnkSimulateLink'.</msg>
+<status status="PASS" starttime="20230606 16:44:05.496" endtime="20230606 16:44:06.720"/>
+</kw>
+<status status="PASS" starttime="20230606 16:44:05.495" endtime="20230606 16:44:06.720"/>
+</kw>
+<kw name="Entrar com o número da &quot;${MATRICULA}&quot; matricula" library="fidelidade_resources" sourcename="Entrar com o número da &quot;${MATRICULA}&quot; matricula">
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>//iframe[contains(@title,'Simulator')]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230606 16:44:06.721" level="INFO">Selecting frame '//iframe[contains(@title,'Simulator')]'.</msg>
+<status status="PASS" starttime="20230606 16:44:06.721" endtime="20230606 16:44:06.749"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtContent$Sim_Auto_Web_Pat_wtLicensePlateBlock$block$wtInputPlaceholder$wttxtRegNumber'][contains(@id,'wttxtRegNumber')]</arg>
+<arg>text=${MATRICULA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230606 16:44:06.749" level="INFO">Typing text 'AA16AA' into text field 'xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtContent$Sim_Auto_Web_Pat_wtLicensePlateBlock$block$wtInputPlaceholder$wttxtRegNumber'][contains(@id,'wttxtRegNumber')]'.</msg>
+<status status="PASS" starttime="20230606 16:44:06.749" endtime="20230606 16:44:06.864"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230606 16:44:09.866" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230606 16:44:06.864" endtime="20230606 16:44:09.866"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@type='submit'][contains(@id,'wtbtnNext')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230606 16:44:09.868" level="INFO">Clicking element 'xpath=//input[@type='submit'][contains(@id,'wtbtnNext')]'.</msg>
+<msg timestamp="20230606 16:44:11.164" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230606 16:44:11.164" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input disabled="disabled" onclick="OsAjax(arguments[0] || window.event,'CFID_B2C_SIM_Th_SIMAUTO_wt60_block_wtMainContent_CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard_block_wtCustomCardContent_CFID_B2C_SIM_Pat_SIMAUTO_wt9_block_wtFooter_wtbtnNext','CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtFooter$wtbtnNext','','__OSVSTATE,',''); return false;" type="submit" name="CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtFooter$wtbtnNext" value="Seguinte" id="CFID_B2C_SIM_Th_SIMAUTO_wt60_block_wtMainContent_CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard_block_wtCustomCardContent_CFID_B2C_SIM_Pat_SIMAUTO_wt9_block_wtFooter_wtbtnNext" tabindex="3" class="Button Large NextButton Is_Default" style="width: 370px" data-loading-text="SEGUINTE"&gt; is not clickable at point (594, 440). Other element would receive the click: &lt;div style="margin-top: 30px;"&gt;...&lt;/div&gt;
+  (Session info: chrome=114.0.5735.106)
+Stacktrace:
+0   chromedriver                        0x0000000102d8ff48 chromedriver + 4226888
+1   chromedriver                        0x0000000102d884f4 chromedriver + 4195572
+2   chromedriver                        0x00000001029ccd68 chromedriver + 281960
+3   chromedriver                        0x0000000102a0e6e8 chromedriver + 550632
+4   chromedriver                        0x0000000102a0c638 chromedriver + 542264
+5   chromedriver                        0x0000000102a0a548 chromedriver + 533832
+6   chromedriver                        0x0000000102a09918 chromedriver + 530712
+7   chromedriver                        0x00000001029fdeec chromedriver + 483052
+8   chromedriver                        0x00000001029fd734 chromedriver + 481076
+9   chromedriver                        0x0000000102a3ec58 chromedriver + 748632
+10  chromedriver                        0x00000001029fbf1c chromedriver + 474908
+11  chromedriver                        0x00000001029fcef4 chromedriver + 478964
+12  chromedriver                        0x0000000102d5159c chromedriver + 3970460
+13  chromedriver                        0x0000000102d556f0 chromedriver + 3987184
+14  chromedriver                        0x0000000102d5b5b4 chromedriver + 4011444
+15  chromedriver                        0x0000000102d562fc chromedriver + 3990268
+16  chromedriver                        0x0000000102d2e1c0 chromedriver + 3826112
+17  chromedriver                        0x0000000102d72088 chromedriver + 4104328
+18  chromedriver                        0x0000000102d721e0 chromedriver + 4104672
+19  chromedriver                        0x0000000102d81f28 chromedriver + 4169512
+20  libsystem_pthread.dylib             0x000000019ea9ffa8 _pthread_start + 148
+21  libsystem_pthread.dylib             0x000000019ea9ada0 thread_start + 8
+</msg>
+<status status="FAIL" starttime="20230606 16:44:09.867" endtime="20230606 16:44:11.165"/>
+</kw>
+<status status="FAIL" starttime="20230606 16:44:06.721" endtime="20230606 16:44:11.165"/>
+</kw>
+<kw name="Clicar na opção &quot;FAÇA UMA SIMULAÇÃO MAIS PERSONALIZADA&quot;" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+</kw>
+<kw name="Entrar com o NOME &quot;${NOME}&quot;e o NIF &quot;${NIF}&quot; e botão CONTINUAR" library="fidelidade_resources" sourcename="Entrar com o NOME &quot;${NOME}&quot;e o NIF &quot;${NIF}&quot; e botão CONTINUAR">
+<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+</kw>
+<kw name="Entrar com a Data de Nascimento &quot;${DATANASC}&quot;, Género &quot;${GENERO}&quot;, Data de Carta de Condução &quot;${DT_CARTA_CONDUCAO}&quot;, Código Postal &quot;${CODIGO_POSTAL}&quot;" library="fidelidade_resources" sourcename="Entrar com a Data de Nascimento &quot;${DATANASC}&quot;, Género &quot;${GENERO}&quot;, Data de Carta de Condução &quot;${DT_CARTA_CONDUCAO}&quot;, Código Postal &quot;${CODIGO_POSTAL}&quot;">
+<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+</kw>
+<kw name="Clicar na opção &quot;CONTINUAR SEM AGENTE&quot;" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+</kw>
+<kw name="Entrar com o E-mail &quot;${EMAIL}&quot;, Telemovel &quot;${TELEMOVEL}&quot;, marcar &quot;${DADOS_PRIVACIDADE}&quot; para os dados e clicar no botão CONTINUAR" library="fidelidade_resources" sourcename="Entrar com o E-mail &quot;${EMAIL}&quot;, Telemovel &quot;${TELEMOVEL}&quot;, marcar &quot;${DADOS_PRIVACIDADE}&quot; para os dados e clicar no botão CONTINUAR">
+<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+</kw>
+<kw name="Clicar no botão CONTINUAR" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+</kw>
+<kw name="Escolher a versão do veículo, e clique no botão CONTINUAR" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.166"/>
+</kw>
+<kw name="Clicar na opção &quot;Não&quot;, para Seguro extra" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+</kw>
+<kw name="Clicar na opção &quot;Não&quot;, para Reboque e Atrelado" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+</kw>
+<kw name="Clicar na opção CONTINUAR" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+</kw>
+<kw name="Clicar na opção &quot;Fins particulares&quot;, para Uso do veículo e em CONTINUAR" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+</kw>
+<kw name="Clicar em CONTINUAR, para a opção &quot;Não tenho seguro&quot;" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+</kw>
+<kw name="Clicar em CONTINUAR, para ja temos uma proposta para o seu veículo" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+</kw>
+<kw name="Validar que foi exibido uma cotação de seguro AUTO" library="fidelidade_resources">
+<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+</kw>
+<kw name="Fechar o navegador" library="fidelidade_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230606 16:44:11.326" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.326"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230606 16:44:11.326" endtime="20230606 16:44:11.416"/>
+</kw>
+<status status="PASS" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.416"/>
+</kw>
+<doc>Esse teste solicita uma cotação no menu particulares do site da Fidelidade.com.br
+e visualiza o retorno dessa cotação</doc>
+<tag>categorias</tag>
+<tag>menus</tag>
+<status status="FAIL" starttime="20230606 16:42:36.229" endtime="20230606 16:44:11.416">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input disabled="disabled" onclick="OsAjax(arguments[0] || window.event,'CFID_B2C_SIM_Th_SIMAUTO_wt60_block_wtMainContent_CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard_block_wtCustomCardContent_CFID_B2C_SIM_Pat_SIMAUTO_wt9_block_wtFooter_wtbtnNext','CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtFooter$wtbtnNext','','__OSVSTATE,',''); return false;" type="submit" name="CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtFooter$wtbtnNext" value="Seguinte" id="CFID_B2C_SIM_Th_SIMAUTO_wt60_block_wtMainContent_CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard_block_wtCustomCardContent_CFID_B2C_SIM_Pat_SIMAUTO_wt9_block_wtFooter_wtbtnNext" tabindex="3" class="Button Large NextButton Is_Default" style="width: 370px" data-loading-text="SEGUINTE"&gt; is not clickable at point (594, 440). Other element would receive the click: &lt;div style="margin-top: 30px;"&gt;...&lt;/div&gt;
+  (Session info: chrome=114.0.5735.106)
+Stacktrace:
+0   chromedriver                        0x0000000102d8ff48 chromedriver + 4226888
+1   chromedriver                        0x0000000102d884f4 chromedriver + 4...
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x00000001029fcef4 chromedriver + 478964
+12  chromedriver                        0x0000000102d5159c chromedriver + 3970460
+13  chromedriver                        0x0000000102d556f0 chromedriver + 3987184
+14  chromedriver                        0x0000000102d5b5b4 chromedriver + 4011444
+15  chromedriver                        0x0000000102d562fc chromedriver + 3990268
+16  chromedriver                        0x0000000102d2e1c0 chromedriver + 3826112
+17  chromedriver                        0x0000000102d72088 chromedriver + 4104328
+18  chromedriver                        0x0000000102d721e0 chromedriver + 4104672
+19  chromedriver                        0x0000000102d81f28 chromedriver + 4169512
+20  libsystem_pthread.dylib             0x000000019ea9ffa8 _pthread_start + 148
+21  libsystem_pthread.dylib             0x000000019ea9ada0 thread_start + 8</status>
+</test>
+<doc>Essa suíte testa o site da Fidelidade.com.br</doc>
+<status status="FAIL" starttime="20230606 16:42:36.169" endtime="20230606 16:44:11.417"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">categorias</stat>
+<stat pass="0" fail="1" skip="0">menus</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Fidelidade Testes">Fidelidade Testes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
