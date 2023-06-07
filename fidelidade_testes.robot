@@ -21,8 +21,8 @@ Caso de Teste 01 - Acesso ao menu "Particulares"
     Entrar com o NOME "${NOME}"e o NIF "${NIF}" e botão CONTINUAR
     Entrar com a Data de Nascimento "${DATANASC}", Género "${GENERO}", Data de Carta de Condução "${DT_CARTA_CONDUCAO}", Código Postal "${CODIGO_POSTAL}"
     Clicar na opção "CONTINUAR SEM AGENTE"
-    Entrar com o E-mail "${EMAIL}", Telemovel "${TELEMOVEL}", marcar "${DADOS_PRIVACIDADE}" para os dados e clicar no botão CONTINUAR
-    Clicar no botão CONTINUAR
+    Entrar com o E-mail "${EMAIL_TESTE}", Telemovel "${TELEMOVEL}", marcar "${DADOS_PRIVACIDADE}" para os dados e clicar no botão CONTINUAR
+   # Clicar no botão CONTINUAR
     Escolher a versão do veículo, e clique no botão CONTINUAR
     Clicar na opção "Não", para Seguro extra
     Clicar na opção "Não", para Reboque e Atrelado

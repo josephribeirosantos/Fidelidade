@@ -1,219 +1,428 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.3 on darwin)" generated="20230606 16:42:36.169" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.3 on darwin)" generated="20230607 14:16:46.474" rpa="false" schemaversion="3">
 <suite id="s1" name="Fidelidade Testes" source="/Users/josephsantos/Desktop/projetos/fidelidade/fidelidade_testes.robot">
 <test id="s1-t1" name="Caso de Teste 01 - Acesso ao menu &quot;Particulares&quot;" line="9">
 <kw name="Abrir o navegador" library="fidelidade_resources" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230606 16:42:36.230" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<msg timestamp="20230606 16:42:36.232" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
-<status status="PASS" starttime="20230606 16:42:36.230" endtime="20230606 16:42:37.599"/>
+<msg timestamp="20230607 14:16:46.610" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg timestamp="20230607 14:16:46.612" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230607 14:16:46.610" endtime="20230607 14:16:48.394"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230606 16:42:37.599" endtime="20230606 16:42:38.024"/>
+<status status="PASS" starttime="20230607 14:16:48.394" endtime="20230607 14:16:48.823"/>
 </kw>
-<status status="PASS" starttime="20230606 16:42:36.230" endtime="20230606 16:42:38.025"/>
+<status status="PASS" starttime="20230607 14:16:46.610" endtime="20230607 14:16:48.824"/>
 </kw>
 <kw name="Acessar a home page do site Fidelidade.com.br" library="fidelidade_resources">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230606 16:42:38.025" level="INFO">Opening url 'https://www.fidelidade.pt/'</msg>
-<status status="PASS" starttime="20230606 16:42:38.025" endtime="20230606 16:43:20.558"/>
+<msg timestamp="20230607 14:16:48.825" level="INFO">Opening url 'https://www.fidelidade.pt/'</msg>
+<status status="PASS" starttime="20230607 14:16:48.824" endtime="20230607 14:16:57.298"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>locator=${COOKIES_PRIVACIDADE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230606 16:43:20.559" level="INFO">Clicking element '//button[contains(.,'Aceitar Todos')]'.</msg>
-<status status="PASS" starttime="20230606 16:43:20.558" endtime="20230606 16:43:20.590"/>
+<msg timestamp="20230607 14:16:57.299" level="INFO">Clicking element '//button[contains(.,'Aceitar Todos')]'.</msg>
+<status status="PASS" starttime="20230607 14:16:57.298" endtime="20230607 14:16:57.344"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>locator=${MENU_PARTICULARES}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230606 16:43:20.590" endtime="20230606 16:43:20.602"/>
+<status status="PASS" starttime="20230607 14:16:57.345" endtime="20230607 14:16:57.359"/>
 </kw>
-<status status="PASS" starttime="20230606 16:42:38.025" endtime="20230606 16:43:20.602"/>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Fidelidade-com-br.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:16:58.030" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Fidelidade-com-br.png"&gt;&lt;img src="Fidelidade-com-br.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:16:57.359" endtime="20230607 14:16:58.030"/>
+</kw>
+<status status="PASS" starttime="20230607 14:16:48.824" endtime="20230607 14:16:58.030"/>
 </kw>
 <kw name="Verificar se o título da página fica &quot;Fidelidade | Nº 1 em Seguros Automóvel, Saúde, Casa e Viagem&quot;" library="fidelidade_resources" sourcename="Verificar se o título da página fica &quot;${TITULO}&quot;">
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>title=${TITULO}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230606 16:43:20.604" level="INFO">Page title is 'Fidelidade | Nº 1 em Seguros Automóvel, Saúde, Casa e Viagem'.</msg>
-<status status="PASS" starttime="20230606 16:43:20.602" endtime="20230606 16:43:20.604"/>
+<msg timestamp="20230607 14:16:58.033" level="INFO">Page title is 'Fidelidade | Nº 1 em Seguros Automóvel, Saúde, Casa e Viagem'.</msg>
+<status status="PASS" starttime="20230607 14:16:58.031" endtime="20230607 14:16:58.033"/>
 </kw>
-<status status="PASS" starttime="20230606 16:43:20.602" endtime="20230606 16:43:20.604"/>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>title.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:16:58.732" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="title.png"&gt;&lt;img src="title.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:16:58.033" endtime="20230607 14:16:58.732"/>
+</kw>
+<status status="PASS" starttime="20230607 14:16:58.030" endtime="20230607 14:16:58.732"/>
 </kw>
 <kw name="Entrar no menu &quot;Particulares&quot;" library="fidelidade_resources">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>locator=${MENU_PARTICULARES}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230606 16:43:20.605" level="INFO">Clicking element '//*[@id="header"]/div[1]/div[2]/div/div[1]/nav/a[1]'.</msg>
-<status status="PASS" starttime="20230606 16:43:20.604" endtime="20230606 16:43:39.932"/>
+<msg timestamp="20230607 14:16:58.733" level="INFO">Clicking element '//*[@id="header"]/div[1]/div[2]/div/div[1]/nav/a[1]'.</msg>
+<status status="PASS" starttime="20230607 14:16:58.732" endtime="20230607 14:16:59.890"/>
 </kw>
-<status status="PASS" starttime="20230606 16:43:20.604" endtime="20230606 16:43:39.933"/>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>menu_particulares.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:00.713" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="menu_particulares.png"&gt;&lt;img src="menu_particulares.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:16:59.890" endtime="20230607 14:17:00.713"/>
+</kw>
+<status status="PASS" starttime="20230607 14:16:58.732" endtime="20230607 14:17:00.713"/>
 </kw>
 <kw name="Entrar no menu &quot;Auto&quot;" library="fidelidade_resources">
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>css=a.header</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20230606 16:43:39.933" level="INFO">Simulating Mouse Over on element 'css=a.header'.</msg>
-<status status="PASS" starttime="20230606 16:43:39.933" endtime="20230606 16:43:40.230"/>
+<msg timestamp="20230607 14:17:00.713" level="INFO">Simulating Mouse Over on element 'css=a.header'.</msg>
+<status status="PASS" starttime="20230607 14:17:00.713" endtime="20230607 14:17:00.984"/>
 </kw>
-<status status="PASS" starttime="20230606 16:43:39.933" endtime="20230606 16:43:40.230"/>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>auto.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:01.371" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="auto.png"&gt;&lt;img src="auto.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:00.985" endtime="20230607 14:17:01.371"/>
+</kw>
+<status status="PASS" starttime="20230607 14:17:00.713" endtime="20230607 14:17:01.371"/>
 </kw>
 <kw name="Entrar no submenu &quot;Auto1|2|3|4&quot;" library="fidelidade_resources">
 <kw name="Click Link" library="SeleniumLibrary">
 <arg>link=Auto 1|2|3|4</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230606 16:43:40.231" level="INFO">Clicking link 'link=Auto 1|2|3|4'.</msg>
-<status status="PASS" starttime="20230606 16:43:40.231" endtime="20230606 16:44:05.495"/>
+<msg timestamp="20230607 14:17:01.372" level="INFO">Clicking link 'link=Auto 1|2|3|4'.</msg>
+<status status="PASS" starttime="20230607 14:17:01.371" endtime="20230607 14:17:02.133"/>
 </kw>
-<status status="PASS" starttime="20230606 16:43:40.230" endtime="20230606 16:44:05.495"/>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>auto1234.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:02.566" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="auto1234.png"&gt;&lt;img src="auto1234.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:02.133" endtime="20230607 14:17:02.566"/>
+</kw>
+<status status="PASS" starttime="20230607 14:17:01.371" endtime="20230607 14:17:02.566"/>
 </kw>
 <kw name="Clicar no botão &quot;Quero Simular&quot;" library="fidelidade_resources">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id=${BUTTON_QUERO_SIMULAR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230606 16:44:05.496" level="INFO">Clicking element 'id=ctl00_PlaceHolderMain_EditModePanel2_ProductDescription_lnkSimulateLink'.</msg>
-<status status="PASS" starttime="20230606 16:44:05.496" endtime="20230606 16:44:06.720"/>
+<msg timestamp="20230607 14:17:02.567" level="INFO">Clicking element 'id=ctl00_PlaceHolderMain_EditModePanel2_ProductDescription_lnkSimulateLink'.</msg>
+<status status="PASS" starttime="20230607 14:17:02.567" endtime="20230607 14:17:03.437"/>
 </kw>
-<status status="PASS" starttime="20230606 16:44:05.495" endtime="20230606 16:44:06.720"/>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>quero-simular.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:03.674" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="quero-simular.png"&gt;&lt;img src="quero-simular.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:03.437" endtime="20230607 14:17:03.674"/>
+</kw>
+<status status="PASS" starttime="20230607 14:17:02.566" endtime="20230607 14:17:03.674"/>
 </kw>
 <kw name="Entrar com o número da &quot;${MATRICULA}&quot; matricula" library="fidelidade_resources" sourcename="Entrar com o número da &quot;${MATRICULA}&quot; matricula">
 <kw name="Select Frame" library="SeleniumLibrary">
 <arg>//iframe[contains(@title,'Simulator')]</arg>
 <doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230606 16:44:06.721" level="INFO">Selecting frame '//iframe[contains(@title,'Simulator')]'.</msg>
-<status status="PASS" starttime="20230606 16:44:06.721" endtime="20230606 16:44:06.749"/>
+<msg timestamp="20230607 14:17:03.675" level="INFO">Selecting frame '//iframe[contains(@title,'Simulator')]'.</msg>
+<status status="PASS" starttime="20230607 14:17:03.675" endtime="20230607 14:17:03.688"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtContent$Sim_Auto_Web_Pat_wtLicensePlateBlock$block$wtInputPlaceholder$wttxtRegNumber'][contains(@id,'wttxtRegNumber')]</arg>
 <arg>text=${MATRICULA}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230606 16:44:06.749" level="INFO">Typing text 'AA16AA' into text field 'xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtContent$Sim_Auto_Web_Pat_wtLicensePlateBlock$block$wtInputPlaceholder$wttxtRegNumber'][contains(@id,'wttxtRegNumber')]'.</msg>
-<status status="PASS" starttime="20230606 16:44:06.749" endtime="20230606 16:44:06.864"/>
+<msg timestamp="20230607 14:17:03.688" level="INFO">Typing text 'AA16AA' into text field 'xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtContent$Sim_Auto_Web_Pat_wtLicensePlateBlock$block$wtInputPlaceholder$wttxtRegNumber'][contains(@id,'wttxtRegNumber')]'.</msg>
+<status status="PASS" starttime="20230607 14:17:03.688" endtime="20230607 14:17:03.818"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>matricula.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:04.059" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="matricula.png"&gt;&lt;img src="matricula.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:03.818" endtime="20230607 14:17:04.059"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230606 16:44:09.866" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230606 16:44:06.864" endtime="20230606 16:44:09.866"/>
+<msg timestamp="20230607 14:17:07.062" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:04.059" endtime="20230607 14:17:07.063"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//input[@type='submit'][contains(@id,'wtbtnNext')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230606 16:44:09.868" level="INFO">Clicking element 'xpath=//input[@type='submit'][contains(@id,'wtbtnNext')]'.</msg>
-<msg timestamp="20230606 16:44:11.164" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230606 16:44:11.164" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input disabled="disabled" onclick="OsAjax(arguments[0] || window.event,'CFID_B2C_SIM_Th_SIMAUTO_wt60_block_wtMainContent_CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard_block_wtCustomCardContent_CFID_B2C_SIM_Pat_SIMAUTO_wt9_block_wtFooter_wtbtnNext','CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtFooter$wtbtnNext','','__OSVSTATE,',''); return false;" type="submit" name="CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtFooter$wtbtnNext" value="Seguinte" id="CFID_B2C_SIM_Th_SIMAUTO_wt60_block_wtMainContent_CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard_block_wtCustomCardContent_CFID_B2C_SIM_Pat_SIMAUTO_wt9_block_wtFooter_wtbtnNext" tabindex="3" class="Button Large NextButton Is_Default" style="width: 370px" data-loading-text="SEGUINTE"&gt; is not clickable at point (594, 440). Other element would receive the click: &lt;div style="margin-top: 30px;"&gt;...&lt;/div&gt;
-  (Session info: chrome=114.0.5735.106)
-Stacktrace:
-0   chromedriver                        0x0000000102d8ff48 chromedriver + 4226888
-1   chromedriver                        0x0000000102d884f4 chromedriver + 4195572
-2   chromedriver                        0x00000001029ccd68 chromedriver + 281960
-3   chromedriver                        0x0000000102a0e6e8 chromedriver + 550632
-4   chromedriver                        0x0000000102a0c638 chromedriver + 542264
-5   chromedriver                        0x0000000102a0a548 chromedriver + 533832
-6   chromedriver                        0x0000000102a09918 chromedriver + 530712
-7   chromedriver                        0x00000001029fdeec chromedriver + 483052
-8   chromedriver                        0x00000001029fd734 chromedriver + 481076
-9   chromedriver                        0x0000000102a3ec58 chromedriver + 748632
-10  chromedriver                        0x00000001029fbf1c chromedriver + 474908
-11  chromedriver                        0x00000001029fcef4 chromedriver + 478964
-12  chromedriver                        0x0000000102d5159c chromedriver + 3970460
-13  chromedriver                        0x0000000102d556f0 chromedriver + 3987184
-14  chromedriver                        0x0000000102d5b5b4 chromedriver + 4011444
-15  chromedriver                        0x0000000102d562fc chromedriver + 3990268
-16  chromedriver                        0x0000000102d2e1c0 chromedriver + 3826112
-17  chromedriver                        0x0000000102d72088 chromedriver + 4104328
-18  chromedriver                        0x0000000102d721e0 chromedriver + 4104672
-19  chromedriver                        0x0000000102d81f28 chromedriver + 4169512
-20  libsystem_pthread.dylib             0x000000019ea9ffa8 _pthread_start + 148
-21  libsystem_pthread.dylib             0x000000019ea9ada0 thread_start + 8
-</msg>
-<status status="FAIL" starttime="20230606 16:44:09.867" endtime="20230606 16:44:11.165"/>
+<msg timestamp="20230607 14:17:07.064" level="INFO">Clicking element 'xpath=//input[@type='submit'][contains(@id,'wtbtnNext')]'.</msg>
+<status status="PASS" starttime="20230607 14:17:07.063" endtime="20230607 14:17:07.132"/>
 </kw>
-<status status="FAIL" starttime="20230606 16:44:06.721" endtime="20230606 16:44:11.165"/>
+<status status="PASS" starttime="20230607 14:17:03.674" endtime="20230607 14:17:07.132"/>
 </kw>
 <kw name="Clicar na opção &quot;FAÇA UMA SIMULAÇÃO MAIS PERSONALIZADA&quot;" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:08.133" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230607 14:17:07.132" endtime="20230607 14:17:08.133"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=Este é um exemplo de pré-simulação para o veículo TESLA Model 3</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230607 14:17:08.134" endtime="20230607 14:17:10.354"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@type='submit'][contains(@id,'wt27')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230607 14:17:10.354" level="INFO">Clicking element 'xpath=//input[@type='submit'][contains(@id,'wt27')]'.</msg>
+<status status="PASS" starttime="20230607 14:17:10.354" endtime="20230607 14:17:10.392"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>faca-simulacao-mais-personalizada.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:10.589" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="faca-simulacao-mais-personalizada.png"&gt;&lt;img src="faca-simulacao-mais-personalizada.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:10.392" endtime="20230607 14:17:10.589"/>
+</kw>
+<status status="PASS" starttime="20230607 14:17:07.132" endtime="20230607 14:17:10.590"/>
 </kw>
 <kw name="Entrar com o NOME &quot;${NOME}&quot;e o NIF &quot;${NIF}&quot; e botão CONTINUAR" library="fidelidade_resources" sourcename="Entrar com o NOME &quot;${NOME}&quot;e o NIF &quot;${NIF}&quot; e botão CONTINUAR">
-<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:15.590" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:10.590" endtime="20230607 14:17:15.591"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt92$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt25$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldName$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wtnameStatus$block$wtInput$wttxtName'][contains(@id,'wttxtName')]</arg>
+<arg>text=${NOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230607 14:17:15.593" level="INFO">Typing text 'Oskulace Guago' into text field 'xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt92$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt25$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldName$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wtnameStatus$block$wtInput$wttxtName'][contains(@id,'wttxtName')]'.</msg>
+<status status="PASS" starttime="20230607 14:17:15.591" endtime="20230607 14:17:15.657"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>nome.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:15.814" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="nome.png"&gt;&lt;img src="nome.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:15.657" endtime="20230607 14:17:15.814"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:18.814" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:15.814" endtime="20230607 14:17:18.814"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt92$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt25$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldNIF$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wtnifStatus$block$wtInput$wttxtNif'][contains(@id,'wttxtNif')]</arg>
+<arg>text=${NIF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230607 14:17:18.816" level="INFO">Typing text '234549696' into text field 'xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt92$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt25$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldNIF$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wtnifStatus$block$wtInput$wttxtNif'][contains(@id,'wttxtNif')]'.</msg>
+<status status="PASS" starttime="20230607 14:17:18.815" endtime="20230607 14:17:18.879"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>nif.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:19.060" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="nif.png"&gt;&lt;img src="nif.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:18.879" endtime="20230607 14:17:19.060"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:21.061" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:19.060" endtime="20230607 14:17:21.062"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@tabindex='3'][contains(@id,'wtbtnNext')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230607 14:17:21.062" endtime="20230607 14:17:21.091"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@id='CFID_B2C_SIM_Th_SIMAUTO_wt22_block_wtMainContent_wtbtnNext']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230607 14:17:21.091" level="INFO">Clicking element 'xpath=//input[@id='CFID_B2C_SIM_Th_SIMAUTO_wt22_block_wtMainContent_wtbtnNext']'.</msg>
+<status status="PASS" starttime="20230607 14:17:21.091" endtime="20230607 14:17:21.139"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>CONTINUAR.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:21.304" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="CONTINUAR.png"&gt;&lt;img src="CONTINUAR.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:21.139" endtime="20230607 14:17:21.304"/>
+</kw>
+<status status="PASS" starttime="20230607 14:17:10.590" endtime="20230607 14:17:21.304"/>
 </kw>
 <kw name="Entrar com a Data de Nascimento &quot;${DATANASC}&quot;, Género &quot;${GENERO}&quot;, Data de Carta de Condução &quot;${DT_CARTA_CONDUCAO}&quot;, Código Postal &quot;${CODIGO_POSTAL}&quot;" library="fidelidade_resources" sourcename="Entrar com a Data de Nascimento &quot;${DATANASC}&quot;, Género &quot;${GENERO}&quot;, Data de Carta de Condução &quot;${DT_CARTA_CONDUCAO}&quot;, Código Postal &quot;${CODIGO_POSTAL}&quot;">
-<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:25.306" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:21.304" endtime="20230607 14:17:25.306"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt8$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt101$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldDataNasc$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt31$block$wtInput$wtDOBInput'][contains(@id,'wtDOBInput')]</arg>
+<arg>text=${DATANASC}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230607 14:17:25.307" level="INFO">Typing text '11091969' into text field 'xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt8$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt101$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldDataNasc$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt31$block$wtInput$wtDOBInput'][contains(@id,'wtDOBInput')]'.</msg>
+<status status="PASS" starttime="20230607 14:17:25.306" endtime="20230607 14:17:25.360"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>DATANASC.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:25.530" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="DATANASC.png"&gt;&lt;img src="DATANASC.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:25.360" endtime="20230607 14:17:25.530"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:29.530" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:25.530" endtime="20230607 14:17:29.531"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>xpath=//select[@name='CFID_B2C_SIM_Th_SIMAUTO_wt8$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt101$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldGender$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt2$block$wtInput$wtGenderCombo'][contains(@id,'wtGenderCombo')]</arg>
+<arg>${GENERO}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230607 14:17:29.533" level="INFO">Selecting options from selection list 'xpath=//select[@name='CFID_B2C_SIM_Th_SIMAUTO_wt8$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt101$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldGender$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt2$block$wtInput$wtGenderCombo'][contains(@id,'wtGenderCombo')]' by label Masculino.</msg>
+<status status="PASS" starttime="20230607 14:17:29.531" endtime="20230607 14:17:29.592"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>GENERO.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:29.756" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="GENERO.png"&gt;&lt;img src="GENERO.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:29.592" endtime="20230607 14:17:29.756"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:33.758" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:29.756" endtime="20230607 14:17:33.758"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt8$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt101$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldDataCarta$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt59$block$wtInput$wtLicenseDateInput'][contains(@id,'wtLicenseDateInput')]</arg>
+<arg>text=${DT_CARTA_CONDUCAO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230607 14:17:33.760" level="INFO">Typing text '11091999' into text field 'xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt8$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt101$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldDataCarta$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt59$block$wtInput$wtLicenseDateInput'][contains(@id,'wtLicenseDateInput')]'.</msg>
+<status status="PASS" starttime="20230607 14:17:33.758" endtime="20230607 14:17:33.821"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>DT_CARTA_CONDUCAO.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:33.988" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="DT_CARTA_CONDUCAO.png"&gt;&lt;img src="DT_CARTA_CONDUCAO.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:33.821" endtime="20230607 14:17:33.988"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:35.990" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:33.988" endtime="20230607 14:17:35.990"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt8$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt101$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldCodPostal$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt48$block$wtInput$wtPostalCodeInput'][contains(@id,'wtPostalCodeInput')]</arg>
+<arg>text=${CODIGO_POSTAL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230607 14:17:35.992" level="INFO">Typing text '1500012' into text field 'xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt8$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt101$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldCodPostal$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt48$block$wtInput$wtPostalCodeInput'][contains(@id,'wtPostalCodeInput')]'.</msg>
+<status status="PASS" starttime="20230607 14:17:35.990" endtime="20230607 14:17:36.045"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>CODIGO_POSTAL.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:36.217" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="CODIGO_POSTAL.png"&gt;&lt;img src="CODIGO_POSTAL.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:36.045" endtime="20230607 14:17:36.217"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:38.219" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:36.217" endtime="20230607 14:17:38.219"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@tabindex='5'][contains(@id,'wtNextButton')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230607 14:17:38.220" endtime="20230607 14:17:38.246"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@id='CFID_B2C_SIM_Th_SIMAUTO_wt8_block_wtMainContent_wtNextButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230607 14:17:38.246" level="INFO">Clicking element 'xpath=//input[@id='CFID_B2C_SIM_Th_SIMAUTO_wt8_block_wtMainContent_wtNextButton']'.</msg>
+<status status="PASS" starttime="20230607 14:17:38.246" endtime="20230607 14:17:38.299"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>CONTINUAR22.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:38.470" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="CONTINUAR22.png"&gt;&lt;img src="CONTINUAR22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:38.299" endtime="20230607 14:17:38.470"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:42.470" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:38.470" endtime="20230607 14:17:42.471"/>
+</kw>
+<status status="PASS" starttime="20230607 14:17:21.304" endtime="20230607 14:17:42.471"/>
 </kw>
 <kw name="Clicar na opção &quot;CONTINUAR SEM AGENTE&quot;" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//input[@type='submit'][contains(@id,'wtNextButton4')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230607 14:17:42.472" endtime="20230607 14:17:42.499"/>
 </kw>
-<kw name="Entrar com o E-mail &quot;${EMAIL}&quot;, Telemovel &quot;${TELEMOVEL}&quot;, marcar &quot;${DADOS_PRIVACIDADE}&quot; para os dados e clicar no botão CONTINUAR" library="fidelidade_resources" sourcename="Entrar com o E-mail &quot;${EMAIL}&quot;, Telemovel &quot;${TELEMOVEL}&quot;, marcar &quot;${DADOS_PRIVACIDADE}&quot; para os dados e clicar no botão CONTINUAR">
-<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@id='CFID_B2C_SIM_Th_SIMAUTO_wt8_block_wtMainContent_wtAgents_Sim_Auto_Web_Pat_wtConfirmModal_block_wtSecondaryButtons_wtNextButton4']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230607 14:17:42.500" level="INFO">Clicking element 'xpath=//input[@id='CFID_B2C_SIM_Th_SIMAUTO_wt8_block_wtMainContent_wtAgents_Sim_Auto_Web_Pat_wtConfirmModal_block_wtSecondaryButtons_wtNextButton4']'.</msg>
+<status status="PASS" starttime="20230607 14:17:42.500" endtime="20230607 14:17:42.546"/>
 </kw>
-<kw name="Clicar no botão CONTINUAR" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.165"/>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>CONTINUAR-SEM-AGENTE.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230607 14:17:42.745" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="CONTINUAR-SEM-AGENTE.png"&gt;&lt;img src="CONTINUAR-SEM-AGENTE.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:42.546" endtime="20230607 14:17:42.745"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 14:17:47.746" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230607 14:17:42.745" endtime="20230607 14:17:47.746"/>
+</kw>
+<status status="PASS" starttime="20230607 14:17:42.472" endtime="20230607 14:17:47.747"/>
+</kw>
+<kw name="Entrar com o E-mail &quot;${EMAIL_TESTE}&quot;, Telemovel &quot;${TELEMOVEL}&quot;, marcar &quot;${DADOS_PRIVACIDADE}&quot; para os dados e clicar no botão CONTINUAR" library="fidelidade_resources" sourcename="Entrar com o E-mail &quot;${EMAIL_TESTE}&quot;, Telemovel &quot;${TELEMOVEL}&quot;, marcar &quot;${DADOS_PRIVACIDADE}&quot; para os dados e clicar no botão CONTINUAR">
+<msg timestamp="20230607 14:17:47.749" level="FAIL">Variable '${EMAIL_TESTE}' not found.</msg>
+<status status="FAIL" starttime="20230607 14:17:47.747" endtime="20230607 14:17:47.749"/>
 </kw>
 <kw name="Escolher a versão do veículo, e clique no botão CONTINUAR" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.165" endtime="20230606 16:44:11.166"/>
+<status status="NOT RUN" starttime="20230607 14:17:47.749" endtime="20230607 14:17:47.750"/>
 </kw>
 <kw name="Clicar na opção &quot;Não&quot;, para Seguro extra" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+<status status="NOT RUN" starttime="20230607 14:17:47.750" endtime="20230607 14:17:47.750"/>
 </kw>
 <kw name="Clicar na opção &quot;Não&quot;, para Reboque e Atrelado" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+<status status="NOT RUN" starttime="20230607 14:17:47.750" endtime="20230607 14:17:47.750"/>
 </kw>
 <kw name="Clicar na opção CONTINUAR" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+<status status="NOT RUN" starttime="20230607 14:17:47.750" endtime="20230607 14:17:47.750"/>
 </kw>
 <kw name="Clicar na opção &quot;Fins particulares&quot;, para Uso do veículo e em CONTINUAR" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+<status status="NOT RUN" starttime="20230607 14:17:47.750" endtime="20230607 14:17:47.751"/>
 </kw>
 <kw name="Clicar em CONTINUAR, para a opção &quot;Não tenho seguro&quot;" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+<status status="NOT RUN" starttime="20230607 14:17:47.751" endtime="20230607 14:17:47.751"/>
 </kw>
 <kw name="Clicar em CONTINUAR, para ja temos uma proposta para o seu veículo" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+<status status="NOT RUN" starttime="20230607 14:17:47.751" endtime="20230607 14:17:47.751"/>
 </kw>
 <kw name="Validar que foi exibido uma cotação de seguro AUTO" library="fidelidade_resources">
-<status status="NOT RUN" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.166"/>
+<status status="NOT RUN" starttime="20230607 14:17:47.751" endtime="20230607 14:17:47.751"/>
 </kw>
 <kw name="Fechar o navegador" library="fidelidade_resources" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20230606 16:44:11.326" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.326"/>
+<msg timestamp="20230607 14:17:47.945" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230607 14:17:47.752" endtime="20230607 14:17:47.945"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230606 16:44:11.326" endtime="20230606 16:44:11.416"/>
+<status status="PASS" starttime="20230607 14:17:47.945" endtime="20230607 14:17:48.051"/>
 </kw>
-<status status="PASS" starttime="20230606 16:44:11.166" endtime="20230606 16:44:11.416"/>
+<status status="PASS" starttime="20230607 14:17:47.751" endtime="20230607 14:17:48.051"/>
 </kw>
 <doc>Esse teste solicita uma cotação no menu particulares do site da Fidelidade.com.br
 e visualiza o retorno dessa cotação</doc>
 <tag>categorias</tag>
 <tag>menus</tag>
-<status status="FAIL" starttime="20230606 16:42:36.229" endtime="20230606 16:44:11.416">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input disabled="disabled" onclick="OsAjax(arguments[0] || window.event,'CFID_B2C_SIM_Th_SIMAUTO_wt60_block_wtMainContent_CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard_block_wtCustomCardContent_CFID_B2C_SIM_Pat_SIMAUTO_wt9_block_wtFooter_wtbtnNext','CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtFooter$wtbtnNext','','__OSVSTATE,',''); return false;" type="submit" name="CFID_B2C_SIM_Th_SIMAUTO_wt60$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt9$block$wtFooter$wtbtnNext" value="Seguinte" id="CFID_B2C_SIM_Th_SIMAUTO_wt60_block_wtMainContent_CFID_B2C_SIM_Pat_SIMAUTO_wtCustomCard_block_wtCustomCardContent_CFID_B2C_SIM_Pat_SIMAUTO_wt9_block_wtFooter_wtbtnNext" tabindex="3" class="Button Large NextButton Is_Default" style="width: 370px" data-loading-text="SEGUINTE"&gt; is not clickable at point (594, 440). Other element would receive the click: &lt;div style="margin-top: 30px;"&gt;...&lt;/div&gt;
-  (Session info: chrome=114.0.5735.106)
-Stacktrace:
-0   chromedriver                        0x0000000102d8ff48 chromedriver + 4226888
-1   chromedriver                        0x0000000102d884f4 chromedriver + 4...
-    [ Message content over the limit has been removed. ]
-...hromedriver                        0x00000001029fcef4 chromedriver + 478964
-12  chromedriver                        0x0000000102d5159c chromedriver + 3970460
-13  chromedriver                        0x0000000102d556f0 chromedriver + 3987184
-14  chromedriver                        0x0000000102d5b5b4 chromedriver + 4011444
-15  chromedriver                        0x0000000102d562fc chromedriver + 3990268
-16  chromedriver                        0x0000000102d2e1c0 chromedriver + 3826112
-17  chromedriver                        0x0000000102d72088 chromedriver + 4104328
-18  chromedriver                        0x0000000102d721e0 chromedriver + 4104672
-19  chromedriver                        0x0000000102d81f28 chromedriver + 4169512
-20  libsystem_pthread.dylib             0x000000019ea9ffa8 _pthread_start + 148
-21  libsystem_pthread.dylib             0x000000019ea9ada0 thread_start + 8</status>
+<status status="FAIL" starttime="20230607 14:16:46.609" endtime="20230607 14:17:48.051">Variable '${EMAIL_TESTE}' not found.</status>
 </test>
 <doc>Essa suíte testa o site da Fidelidade.com.br</doc>
-<status status="FAIL" starttime="20230606 16:42:36.169" endtime="20230606 16:44:11.417"/>
+<status status="FAIL" starttime="20230607 14:16:46.474" endtime="20230607 14:17:48.052"/>
 </suite>
 <statistics>
 <total>
