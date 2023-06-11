@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Essa suíte testa o site da Fidelidade.com.br
-Resource         fidelidade_resources.robot
+Resource    ../data/fidelidade_resources.robot
 Test Setup       Abrir o navegador
 Test Teardown    Fechar o navegador
 
@@ -18,11 +18,22 @@ Caso de Teste 01 - Acesso ao menu "Particulares"
     E clicar no botão "Quero Simular"
     E entrar com o número da "${MATRICULA}" matricula
     E clicar na opção "FAÇA UMA SIMULAÇÃO MAIS PERSONALIZADA"
-    E entrar com o NOME "${NOME}"e o NIF "${NIF}" e botão CONTINUAR
+
+    ${NOME}    FakerLibrary.FirstName
+    ${SOBRENOME}     FakerLibrary.lastName
+    Entrar com o NOME "${NOME}" 
+
+    ${NIF}    Gerar NIF Válido
+    Log    Número de Identificação Fiscal gerado: ${NIF}
+    Preencher Dados    ${NIF}
+
+    Clicar no botão CONTINUAR da page NOME e NIF
+    
     E entrar com a Data de Nascimento "${DATANASC}", Género "${GENERO}", Data de Carta de Condução "${DT_CARTA_CONDUCAO}", Código Postal "${CODIGO_POSTAL}"
     E clicar na opção "CONTINUAR SEM AGENTE"
-    E entrar com o E-mail "${EMAIL_TESTE}", Telemovel "${TELEMOVEL}", marcar "${DADOS_PRIVACIDADE}" para os dados e clicar no botão CONTINUAR
-   # Clicar no botão CONTINUAR
+    ${email}    FakerLibrary.FreeEmail
+    Entrar com o E-mail "${email}", Telemovel "${TELEMOVEL}", marcar "${DADOS_PRIVACIDADE}" para os dados e clicar no CONTINUAR
+    Clicar no button CONTINUE
     Então escolher a versão do veículo, e clique no botão CONTINUAR
     E clicar na opção "Não", para Seguro extra
     E clicar na opção "Não", para Reboque e Atrelado

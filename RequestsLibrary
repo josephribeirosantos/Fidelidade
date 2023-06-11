@@ -1,0 +1,8 @@
+*** Settings ***
+Library    FakerLibrary
+Library     Collections     
+####/Users/josephsantos/Library/Python/3.11/lib/python/site-packages
+# Adicione os caminhos necessários ao robot.pythonpath
+Library    RequestsLibrary
+####Library    MyCustomLibrary    WITH NAME    MyLibrary
+Library    SeleniumLibrary

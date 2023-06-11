@@ -1,9 +1,23 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     RequestsLibrary
+#Library     FakerLibrary    locale=pt_PT    WITH NAME    Faker
+Library     FakerLibrary    locale=pt_PT    
 Library     String
-#Library     FakerLibrary
-Resource    settings.robot
+Library     Collections
+Library     BuiltIn
+Library     random
+##3...    /Users/josephsantos/Library/Python/3.9/lib/python/site-packages
+###...     /Users/josephsantos/Library/Python/3.9/lib/python/site-packages
+#Library     FakerLibrary     /Users/josephsantos/Library/Frameworks/Python.framework/Versions/3.11/Resources/Python.app/Contents/MacOS/Python
+########Resource    settings.robot
+
+#Elements
+#${First_Name}  firstName
+#${Last_Name}  lastName 
+#${Email}   userEmail
+#${MobileNumber}   userNumber
+#####Resource    ../settings.robot
 
 *** Variables ***
 ${BROWSER}                  chrome
@@ -12,8 +26,8 @@ ${COOKIES_PRIVACIDADE}      //button[contains(.,'Aceitar Todos')]
 ${MENU_PARTICULARES}        //*[@id="header"]/div[1]/div[2]/div/div[1]/nav/a[1]
 ${SUBMENU_AUTO1234}         //*[@id="header"]/div[1]/div[2]/div/div[2]/nav/div[1]/div/ul[1]/li[3]/a
 ${BUTTON_QUERO_SIMULAR}     ctl00_PlaceHolderMain_EditModePanel2_ProductDescription_lnkSimulateLink
-${NOME}                     Oskulace Guago
-${NIF}                      234549696
+#${NOME}                     Oskulace Guago
+#${NIF}                      234549696
 ${MATRICULA}                AA16AA  
 ${DATANASC}                 11091969
 ${GENERO}                   Masculino
@@ -31,6 +45,20 @@ Abrir o navegador
 Fechar o navegador
     Capture Page Screenshot
     Close Browser
+
+
+# Exemplo de uso de email aleatório
+#     ${email}    Generate Random Email      testeemail@email.com
+#     Log    Email gerado: ${email}
+
+# Gerar Email Aleatório
+#     # Gerar um novo e-mail pra inserir no campo e-mail
+#     #${faker}= FakerLibrary.Create locale=pt_PT
+#     ${palavra_aleatoria}  Generate Random String  Length=4  chars=[LETTERS] # Gera uma palavra aleatória com 4 letras em caixa baixa
+#     ${palavra_aleatoria}  Convert To Lower Case   ${palavra_aleatoria}  # Concatena a palavra aleatória com o domínio de email
+#     Set Test Variable    ${EMAIL_TESTE}   ${palavra_aleatoria}@emailteste.com
+#     Set Suite Variable   ${EMAIL_TESTE} # Armazena o email em uma variável de suite para uso posterior
+#     Log Email gerado: ${EMAIL_TESTE}
 
 Acessar a home page do site Fidelidade.com.br
     Go To    url=${URL}
@@ -70,15 +98,42 @@ Clicar na opção "FAÇA UMA SIMULAÇÃO MAIS PERSONALIZADA"
     Wait Until Page Contains    text=Este é um exemplo de pré-simulação para o veículo TESLA Model 3
     Click Element   xpath=//input[@type='submit'][contains(@id,'wt27')]
     Capture Page Screenshot	faca-simulacao-mais-personalizada.png
+    Sleep    1s
 
-Entrar com o NOME "${NOME}"e o NIF "${NIF}" e botão CONTINUAR
+Entrar com o NOME "${NOME}"
     Sleep    5s
-    Input Text    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt92$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt25$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldName$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wtnameStatus$block$wtInput$wttxtName'][contains(@id,'wttxtName')]    text=${NOME}
-    Capture Page Screenshot	nome.png
+    ${NOME}  FakerLibrary.FirstName
+    ${SOBRENOME}  FakerLibrary.lastName
+    Input Text    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt92$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt25$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldName$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wtnameStatus$block$wtInput$wttxtName'][contains(@id,'wttxtName')]    text=${NOME} ${SOBRENOME}
+    Capture Page Screenshot	name.png
     Sleep    3s
-    Input Text    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt92$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt25$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldNIF$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wtnifStatus$block$wtInput$wttxtNif'][contains(@id,'wttxtNif')]    text=${NIF}
+
+Gerar NIF Válido
+    ${digits}    FakerLibrary.Numerify    '########'
+    ${check_digit}    Gerar Dígito de Verificação    ${digits}
+    ${nif}    Catenate    SEPARATOR=    ${digits}    ${check_digit}
+    [Return]    ${nif}
+
+Gerar Dígito de Verificação
+    [Arguments]    ${digits}
+    ${weights}    Create List    9    8    7    6    5    4    3    2
+    ${sum}    Evaluate    sum(int(d) * int(w) for d, w in zip(str(${digits}), ${weights}))
+    ${remainder}    Evaluate    ${sum} % 11
+    ${check_digit}    Evaluate    0 if ${remainder} < 2 else 11 - ${remainder}
+    [Return]    ${check_digit}
+
+
+Preencher Dados
+    [Arguments]    ${NIF}
+    Input Text    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt92$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt25$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldNIF$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wtnifStatus$block$wtInput$wttxtNif'][contains(@id,'wttxtNif')]    ${NIF}
+#     Wait Until Element Is Visible    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt92$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt25$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldNIF$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wtnifStatus$block$wtInput$wttxtNif'][contains(@id,'wttxtNif')]     ${NIF}
+#     Wait Until Element Is Enabled    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$wtbtnNext'][contains(@id,'wtbtnNext')]
+#     Click Element    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$wtbtnNext'][contains(@id,'wtbtnNext')]
+   ####### Input Text    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt22$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wt92$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wt25$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wtfieldNIF$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wtnifStatus$block$wtInput$wttxtNif'][contains(@id,'wttxtNif')]    ${NIF}
     Capture Page Screenshot	nif.png
-    Sleep    2s
+    Sleep    4s
+
+Clicar no botão CONTINUAR da page NOME e NIF   
     Wait Until Element Is Visible    locator=//input[@tabindex='3'][contains(@id,'wtbtnNext')]
     Click Element    xpath=//input[@id='CFID_B2C_SIM_Th_SIMAUTO_wt22_block_wtMainContent_wtbtnNext']
     Capture Page Screenshot	CONTINUAR.png
@@ -109,36 +164,38 @@ Clicar na opção "CONTINUAR SEM AGENTE"
      Capture Page Screenshot	CONTINUAR-SEM-AGENTE.png
      Sleep    5s
 
-Entrar com o E-mail "${EMAIL_TESTE}", Telemovel "${TELEMOVEL}", marcar "${DADOS_PRIVACIDADE}" para os dados e clicar no botão CONTINUAR
+Entrar com o E-mail "${email}", Telemovel "${TELEMOVEL}", marcar "${DADOS_PRIVACIDADE}" para os dados e clicar no CONTINUAR
     Sleep    4s
     Input Text    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt21$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardContainer$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wt7$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt31$block$wtInput$wtPhoneInput'][contains(@id,'wtPhoneInput')]     text=${TELEMOVEL}
     Capture Page Screenshot	telemovel.png
     Sleep    2s
     # Gerar um novo e-mail pra inserir no campo e-mail
-    ${palavra_aleatoria}  Generate Random String  length=4  chars=[LETTERS]
-    ${palavra_aleatoria}  Convert To Lower Case    ${palavra_aleatoria}
-    #Set Test Variable     ${EMAIL_TESTE}  ${palavra_aleatoria}@emailteste.com
-    Set Suite Variable     ${EMAIL_TESTE} ${palavra_aleatoria}@emailteste.com
-    Log  ${EMAIL_TESTE}
-    Input Text    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt21$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardContainer$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wt79$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt13$block$wtInput$wtEmailInput'][contains(@id,'wtEmailInput')]    text=${EMAIL_TESTE} 
+    # ${palavra_aleatoria}  Generate Random String  length=4  chars=[LETTERS]
+    # ${palavra_aleatoria}  Convert To Lower Case    ${palavra_aleatoria}
+    # #Set Test Variable     ${EMAIL_TESTE}  ${palavra_aleatoria}@emailteste.com
+    # Set Suite Variable     ${EMAIL_TESTE} ${palavra_aleatoria}@emailteste.com
+    # Log  ${EMAIL_TESTE}
+    ${email}  FakerLibrary.FreeEmail
+    Input Text    xpath=//input[@name='CFID_B2C_SIM_Th_SIMAUTO_wt21$block$wtMainContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardContainer$block$wtCustomCardContent$CFID_B2C_SIM_Pat_SIMAUTO_wtCardForm$block$wtContent$CFID_B2C_SIM_Pat_SIMAUTO_wt79$block$wtInput$CFID_B2C_SIM_Pat_SIMAUTO_wt13$block$wtInput$wtEmailInput'][contains(@id,'wtEmailInput')]    ${email}
     Capture Page Screenshot	emailteste.png
     Sleep    2s
     Click Element    xpath=//span[@class='Bold'][contains(.,'Porque precisamos dos seus dados?')]
     Capture Page Screenshot	DADOS_PRIVACIDADE.png
-    Sleep    3s
+    Sleep    5s
     Select Checkbox    xpath=//input[@type='checkbox'][contains(@id,'wtInputRGPD')]
     Capture Page Screenshot	Checkbox.png
-    Sleep    3s
+    Sleep    5s
     Wait Until Element Is Visible    locator=//input[@tabindex='3'][contains(@id,'wtNextButton')]
     Click Element    xpath=//input[@id='CFID_B2C_SIM_Th_SIMAUTO_wt21_block_wtMainContent_wtNextButton']
     Capture Page Screenshot	CONTINUAR-DADOS.png
+     Sleep    5s
 
-# Clicar no botão CONTINUAR
-#     Sleep    3s
-#     Wait Until Element Is Visible    locator=//input[@tabindex='1'][contains(@id,'wtNextButton')]
-#     Click Element    xpath=//input[@id='CFID_B2C_SIM_Th_SIMAUTO_wt27_block_wtMainContent_wtNextButton']
-#     Capture Page Screenshot	CONTINUAR14.png
-#     Sleep    5s
+Clicar no button CONTINUE
+    Sleep    3s
+    Wait Until Element Is Visible    locator=//input[@tabindex='1'][contains(@id,'wtNextButton')]
+    Click Element    xpath=//input[@id='CFID_B2C_SIM_Th_SIMAUTO_wt27_block_wtMainContent_wtNextButton']
+    Capture Page Screenshot	CONTINUAR14.png
+    Sleep    5s
 
 Escolher a versão do veículo, e clique no botão CONTINUAR
     Sleep    5s
@@ -194,6 +251,16 @@ Validar que foi exibido uma cotação de seguro AUTO
 
 
 # GHERKIN STEPS
+
+#Dado que eu tenho a biblioteca ${faker} configurada
+# Quando eu gero uma "${palavra_aleatoria}" de 4 letras
+# E eu concateno a "${palavra_aleatoria}" com o domínio de "${EMAIL_TESTE}"
+# Então o "${EMAIL_TESTE}" gerado deve estar no formato correto
+# E o "${EMAIL_TESTE}" gerado deve ser armazenado corretamente
+# Dado que um "${email}" aleatório é gerado
+# Quando eu exibir o "${email}" gerado
+# Então o "${email}" gerado deve estar no formato válido
+
 Dado que estou na home page do site Fidelidade.com.br
     Acessar a home page do site Fidelidade.com.br
     Verificar se o título da página fica "Fidelidade | Nº 1 em Seguros Automóvel, Saúde, Casa e Viagem"
@@ -216,8 +283,8 @@ E entrar com o número da matricula
 E clicar na opção "FAÇA UMA SIMULAÇÃO MAIS PERSONALIZADA"
     Clicar na opção "FAÇA UMA SIMULAÇÃO MAIS PERSONALIZADA"
 
-E entrar com o NOME "${NOME}"e o NIF "${NIF}" e botão CONTINUAR
-    Preencher o NOME "${NOME}"e o NIF "${NIF}" e CONTINUAR
+E entrar com o NOME "${NOME}" e o NIF "${NIF}" e botão CONTINUAR
+    Entrar com o NOME "${NOME}" e o NIF "${NIF}" e botão CONTINUAR
 
 E entrar com a Data de Nascimento "${DATANASC}", Género "${GENERO}", Data de Carta de Condução "${DT_CARTA_CONDUCAO}", Código Postal "${CODIGO_POSTAL}"
     Preencher a Data de Nascimento "${DATANASC}", Género "${GENERO}", Data de Carta de Condução "${DT_CARTA_CONDUCAO}", Código Postal "${CODIGO_POSTAL}"
@@ -225,11 +292,11 @@ E entrar com a Data de Nascimento "${DATANASC}", Género "${GENERO}", Data de Ca
 E clicar na opção "CONTINUAR SEM AGENTE"
     Clicar na opção "CONTINUAR SEM AGENTE"
 
-Então entrar com o E-mail "${EMAIL}", Telemovel "${TELEMOVEL}", marcar "${DADOS_PRIVACIDADE}" para os dados e clicar no botão CONTINUAR
-    Preencher o E-mail "${EMAIL}", Telemovel "${TELEMOVEL}", marcar "${DADOS_PRIVACIDADE}" e CONTINUAR
+Então entrar com o E-mail "${email}", Telemovel "${TELEMOVEL}", marcar "${DADOS_PRIVACIDADE}" para os dados e clicar no botão CONTINUAR
+    Preencher o E-mail "${email}", Telemovel "${TELEMOVEL}", marcar "${DADOS_PRIVACIDADE}" e CONTINUAR
 
-#Clicar no botão CONTINUAR
-#    Clicar no botão CONTINUAR 
+Clicar no botão CONTINUAR
+    Clicar no botão CONTINUAR 
 
 Então escolher a versão do veículo, e clique no botão CONTINUAR
     Escolher a versão do veículo, e clique no botão CONTINUAR
